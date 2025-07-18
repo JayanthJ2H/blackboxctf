@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flag{coming_soon}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(145deg, #0b1e2d, #01080f);
+      font-family: 'Fira Code', monospace;
+      overflow: hidden;
+      color: #a8dadc;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      background: #a8dadc;
+      margin-left: 6px;
+      animation: blink 1s steps(1) infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%     { opacity: 0; }
+    }
+
+    .fade-in {
+      animation: fadeIn 2s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .glow {
+      text-shadow: 0 0 12px #94d2bd, 0 0 32px #94d2bd;
+    }
+
+    .quote {
+      color: #94d2bd;
+      opacity: 0.75;
+      text-shadow: 0 0 4px rgba(148, 210, 189, 0.3);
+    }
+
+    .background-light {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: #0077b640;
+      border-radius: 50%;
+      filter: blur(200px);
+      z-index: 0;
+    }
+    .top-left-glow    { top: -200px; left: -200px; }
+    .bottom-right-glow{ bottom: -200px; right: -200px; }
+  </style>
+</head>
+<body class="relative flex items-center justify-center text-center">
+  <!-- Background light effects -->
+  <div class="background-light top-left-glow absolute"></div>
+  <div class="background-light bottom-right-glow absolute"></div>
+
+  <!-- Content -->
+  <div class="space-y-6 z-10 fade-in px-4">
+    <p class="text-2xl md:text-3xl glow tracking-wide">
+      flag{coming_soon}<span class="cursor"></span>
+    </p>
+    <p class="text-lg md:text-xl quote mx-auto">
+      “Behind every skilled hacker are a thousand broken labs”
+    </p>
+</body>
+</html>
